@@ -3,31 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>North Oak Paving & Sealcoating</title>
+
+    <title>North Oak Paving & Sealcoating | NH, Southern ME & North Shore MA</title>
+
+    <meta name="description" content="North Oak Paving & Sealcoating provides professional asphalt paving, sealcoating, crack filling and asphalt repairs. Serving NH, Southern Maine and the North Shore of Massachusetts. Free estimates.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .logo span {
+            color: #d6a21d;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .phone {
+            font-size: 18px;
+        }
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            padding: 70px 6%;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)),
+                url("https://images.unsplash.com/photo-1590644365607-1c5a8c5c5a3f?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d6a21d;
+        }
+
+        .hero p {
+            font-size: 22px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .primary {
+            background: #d6a21d;
+            color: #111;
+        }
+
+        .secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        section {
+            padding: 70px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service {
+            padding: 30px 25px;
+            background: #f5f5f5;
+            border-top: 5px solid #d6a21d;
+            border-radius: 5px;
+        }
+
+        .service h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #555;
+        }
+
+        .why {
+            background: #111;
+            color: white;
+        }
+
+        .why-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .why-item h3 {
+            color: #d6a21d;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            color: #ddd;
+        }
+
+        .estimate {
+            background: #d6a21d;
+            text-align: center;
+        }
+
+        .estimate h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .estimate p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .estimate .button {
+            background: #111;
+            color: white;
+        }
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 21px;
+            margin: 8px;
+        }
+
+        .contact a {
+            color: #111;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 6%;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .phone {
+                font-size: 15px;
+            }
+
+            .hero {
+                min-height: 560px;
+                padding: 60px 5%;
+            }
+
+            .hero p {
+                font-size: 19px;
+            }
+
+            .service-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .estimate h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>North Oak Paving & Sealcoating</h1>
+<header>
+    <div class="logo">NORTH <span>OAK</span></div>
+    <a class="phone" href="tel:16039183297">📞 603-918-3297</a>
+</header>
 
-    <h2>Quality Asphalt Work You Can Count On</h2>
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>Built to Last.<br><span>Built on Asphalt.</span></h1>
+
+        <p>
+            Professional paving, sealcoating and asphalt repair
+            for driveways, parking lots and commercial properties.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="tel:16039183297">
+                CALL FOR A FREE ESTIMATE
+            </a>
+
+            <a class="button secondary" href="mailto:Watts8089@yahoo.com">
+                EMAIL US
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="services">
+
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Quality asphalt work from start to finish.</p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service">
+            <h3>Asphalt Paving</h3>
+            <p>
+                New asphalt driveways, parking areas and paving projects
+                built with proper preparation and compaction.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>Sealcoating</h3>
+            <p>
+                Protect and improve the appearance of your asphalt with
+                professional driveway and parking lot sealcoating.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>Crack Filling</h3>
+            <p>
+                Stop water from getting into your pavement and help prevent
+                small cracks from becoming expensive repairs.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>Asphalt Repair</h3>
+            <p>
+                Patching and repair work for worn, damaged and deteriorated
+                asphalt surfaces.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>Driveways</h3>
+            <p>
+                Residential asphalt solutions designed to give your property
+                a clean, durable finished surface.
+            </p>
+        </div>
+
+        <div class="service">
+            <h3>Parking Lots</h3>
+            <p>
+                Asphalt maintenance and paving services for businesses,
+                commercial properties and parking areas.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+    <div class="section-title">
+        <h2>Why North Oak?</h2>
+        <p>Professional work without cutting corners.</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-item">
+            <h3>Quality Work</h3>
+            <p>
+                We take pride in doing the job right and paying attention
+                to the details that matter.
+            </p>
+        </div>
+
+        <div class="why-item">
+            <h3>Reliable Service</h3>
+            <p>
+                Clear communication, dependable scheduling and professional
+                service from start to finish.
+            </p>
+        </div>
+
+        <div class="why-item">
+            <h3>Free Estimates</h3>
+            <p>
+                Get an honest estimate for your paving, sealcoating or
+                asphalt repair project.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="estimate">
+
+    <h2>Need Asphalt Work?</h2>
 
     <p>
-        Professional paving, sealcoating, asphalt repair, and crack filling.
+        Get your free estimate today.
     </p>
 
-    <h3>Our Services</h3>
+    <a class="button" href="tel:16039183297">
+        CALL OR TEXT 603-918-3297
+    </a>
 
-    <ul>
-        <li>Asphalt Paving</li>
-        <li>Driveway Sealcoating</li>
-        <li>Crack Filling</li>
-        <li>Asphalt Repairs & Patching</li>
-        <li>Parking Lot Services</li>
-    </ul>
+</section>
 
-    <h3>Get a Free Estimate</h3>
+<section class="contact">
 
-    <p>
-        Call or text us today for a free estimate.
+    <h2>North Oak Paving & Sealcoating</h2>
+
+    <p class="contact-info">
+        📍 Based in Seabrook, NH
     </p>
+
+    <p class="contact-info">
+        📞 <a href="tel:16039183297">603-918-3297</a>
+    </p>
+
+    <p class="contact-info">
+        ✉️ <a href="mailto:Watts8089@yahoo.com">Watts8089@yahoo.com</a>
+    </p>
+
+    <p class="contact-info">
+        Serving New Hampshire, Southern Maine & North Shore Massachusetts
+    </p>
+
+</section>
+
+<footer>
+    <strong>North Oak Paving & Sealcoating</strong><br>
+    Professional Asphalt Services
+</footer>
+
+</body>
+</html>
