@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,10 +45,20 @@
             color: #d6a21d;
         }
 
-        header a {
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d6a21d;
         }
 
         .phone {
@@ -158,9 +169,48 @@
             color: #555;
         }
 
+        .about {
+            background: #fff;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: #d6a21d;
+        }
+
+        .about-content p {
+            color: #444;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .about-highlight {
+            margin-top: 25px;
+            padding: 22px;
+            background: #f5f5f5;
+            border-left: 5px solid #d6a21d;
+            font-size: 19px;
+            font-weight: bold;
+            text-align: left;
+        }
+
         .why {
             background: #111;
             color: white;
+        }
+
+        .why .section-title p {
+            color: #ccc;
         }
 
         .why-grid {
@@ -180,6 +230,60 @@
 
         .why-item p {
             color: #ddd;
+        }
+
+        .work-link {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .work-link .button {
+            background: #111;
+            color: white;
+        }
+
+        .reviews {
+            background: #f5f5f5;
+        }
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .review {
+            background: white;
+            padding: 30px 25px;
+            border-top: 5px solid #d6a21d;
+            border-radius: 5px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.06);
+        }
+
+        .stars {
+            color: #d6a21d;
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .review-name {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .review-date {
+            color: #777;
+            font-size: 14px;
+            margin-top: 3px;
         }
 
         .estimate {
@@ -222,6 +326,16 @@
             font-weight: bold;
         }
 
+        .facebook {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 20px;
+            background: #111;
+            color: white !important;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
         footer {
             background: #111;
             color: #aaa;
@@ -233,17 +347,36 @@
             color: white;
         }
 
+        footer a {
+            color: #d6a21d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         @media (max-width: 800px) {
+
             header {
                 padding: 15px 5%;
+                flex-wrap: wrap;
+                gap: 12px;
             }
 
             .logo {
                 font-size: 20px;
             }
 
+            nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
             .phone {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .hero {
@@ -256,7 +389,8 @@
             }
 
             .service-grid,
-            .why-grid {
+            .why-grid,
+            .review-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -267,6 +401,11 @@
             .estimate h2 {
                 font-size: 32px;
             }
+
+            .about-content h2,
+            .section-title h2 {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -274,14 +413,26 @@
 <body>
 
 <header>
+
     <div class="logo">NORTH <span>OAK</span></div>
-    <a class="phone" href="tel:16039183297">📞 603-918-3297</a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="photos.html">Our Work</a>
+        <a href="estimate.html">Get an Estimate</a>
+        <a class="phone" href="tel:16039183297">603-918-3297</a>
+    </nav>
+
 </header>
 
 <section class="hero">
+
     <div class="hero-content">
 
-        <h1>Built to Last.<br><span>Built on Asphalt.</span></h1>
+        <h1>
+            Built to Last.<br>
+            <span>Built on Asphalt.</span>
+        </h1>
 
         <p>
             Professional paving, sealcoating and asphalt repair
@@ -289,16 +440,19 @@
         </p>
 
         <div class="buttons">
+
             <a class="button primary" href="estimate.html">
                 REQUEST A FREE ESTIMATE
             </a>
 
-            <a class="button secondary" href="mailto:Watts8089@yahoo.com">
-                EMAIL US
+            <a class="button secondary" href="tel:16039183297">
+                CALL OR TEXT 603-918-3297
             </a>
+
         </div>
 
     </div>
+
 </section>
 
 <section class="services">
@@ -362,37 +516,166 @@
 
 </section>
 
+<section class="about">
+
+    <div class="about-content">
+
+        <h2>Locally Owned. <span>Built on Experience.</span></h2>
+
+        <p>
+            North Oak Paving & Sealcoating is a locally owned paving company
+            serving New Hampshire, Southern Maine and the North Shore of
+            Massachusetts.
+        </p>
+
+        <p>
+            Our work is built around the things that matter most in asphalt:
+            proper preparation, attention to detail, quality materials and
+            doing the job right from start to finish.
+        </p>
+
+        <p>
+            Whether we're paving a new driveway, sealing existing asphalt,
+            filling cracks or repairing damaged pavement, we take pride in
+            delivering clean, professional results and treating every
+            property with care.
+        </p>
+
+        <div class="about-highlight">
+            We don't believe in cutting corners. The finished product is only
+            as good as the preparation underneath it.
+        </div>
+
+    </div>
+
+</section>
+
 <section class="why">
 
     <div class="section-title">
+
         <h2>Why North Oak?</h2>
-        <p>Professional work without cutting corners.</p>
+
+        <p>
+            Professional work without cutting corners.
+        </p>
+
     </div>
 
     <div class="why-grid">
 
         <div class="why-item">
+
             <h3>Quality Work</h3>
+
             <p>
                 We take pride in doing the job right and paying attention
                 to the details that matter.
             </p>
+
         </div>
 
         <div class="why-item">
+
             <h3>Reliable Service</h3>
+
             <p>
                 Clear communication, dependable scheduling and professional
                 service from start to finish.
             </p>
+
         </div>
 
         <div class="why-item">
+
             <h3>Free Estimates</h3>
+
             <p>
                 Get an honest estimate for your paving, sealcoating or
                 asphalt repair project.
             </p>
+
+        </div>
+
+    </div>
+
+    <div class="work-link">
+
+        <a class="button" href="photos.html">
+            VIEW OUR WORK
+        </a>
+
+    </div>
+
+</section>
+
+<section class="reviews">
+
+    <div class="section-title">
+
+        <h2>What Our Customers Say</h2>
+
+        <p>
+            See what our customers have to say about their experience.
+        </p>
+
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p class="review-text">
+                “Great experience from start to finish. Robert ensured all
+                areas were prepared before starting. Cracks were sealed and
+                a thick coat of sealer was applied. Robert definitely pays
+                attention to detail and did an amazing job. Very professional
+                and careful to not get sealant material where it shouldn’t be.
+                Would highly recommend!!!”
+            </p>
+
+            <p class="review-name">Savas V.</p>
+            <p class="review-date">September 1, 2025</p>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p class="review-text">
+                “Robert shows great attention to detail, he spent many hours
+                filling cracks on the driveway before he gave it a new coating.
+                And now it looks awesome! Robert is a true craftsman!”
+            </p>
+
+            <p class="review-name">Phil F.</p>
+            <p class="review-date">August 23, 2025</p>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p class="review-text">
+                “I hired them to tear out and replace my cracked asphalt
+                driveway. They arrived when they said they would and the
+                owner personally walked me through the grading and prep work
+                to ensure proper drainage. The crew worked hard all day,
+                didn't cut any corners on the thickness of the asphalt, and
+                the finished surface is smooth, even, and has a clean edge
+                where it meets the garage. They also did a fantastic job
+                cleaning up the street and lawn before leaving. Fair price,
+                great communication, and an amazing final result. Highly
+                recommend!”
+            </p>
+
+            <p class="review-name">Grant W.</p>
+            <p class="review-date">April 23, 2024</p>
+
         </div>
 
     </div>
@@ -401,15 +684,23 @@
 
 <section class="estimate">
 
-    <h2>Need Asphalt Work?</h2>
+    <h2>Ready to Start Your Project?</h2>
 
     <p>
         Get your free estimate today.
     </p>
 
-    <a class="button" href="tel:16039183297">
-        CALL OR TEXT 603-918-3297
-    </a>
+    <div class="buttons">
+
+        <a class="button" href="estimate.html">
+            REQUEST A FREE ESTIMATE
+        </a>
+
+        <a class="button" href="tel:16039183297">
+            CALL OR TEXT 603-918-3297
+        </a>
+
+    </div>
 
 </section>
 
@@ -433,12 +724,28 @@
         Serving New Hampshire, Southern Maine & North Shore Massachusetts
     </p>
 
+    <a class="facebook"
+       href="https://www.facebook.com/profile.php?id=100093697131832"
+       target="_blank"
+       rel="noopener">
+        Visit Us on Facebook
+    </a>
+
 </section>
 
 <footer>
+
     <strong>North Oak Paving & Sealcoating</strong><br>
-    Professional Asphalt Services
+
+    Professional Asphalt Services<br><br>
+
+    <a href="photos.html">Our Work</a>
+    &nbsp; | &nbsp;
+    <a href="estimate.html">Request an Estimate</a>
+
 </footer>
 
 </body>
 </html>
+```
+
